@@ -4,12 +4,12 @@ import os
 # -------------------------------
 # AUTHENTICATION
 # -------------------------------
-HF_TOKEN = os.getenv("TPP_HF_TOKEN")
+#HF_TOKEN = os.getenv("TPP_HF_TOKEN")
 
-if HF_TOKEN is None:
-    raise ValueError("Environment variable 'TPP_HF_TOKEN' is not set. Please add your HF token.")
+#if HF_TOKEN is None:
+#    raise ValueError("Environment variable 'TPP_HF_TOKEN' is not set. Please add your HF token.")
 
-api = HfApi(token=HF_TOKEN)
+api = HfApi(token=os.getenv("TPP_HF_TOKEN"))
 
 # -------------------------------
 # HUGGING FACE SPACE DETAILS
