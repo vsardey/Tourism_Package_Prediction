@@ -7,7 +7,7 @@ import joblib
 # LOAD MODEL FROM HUGGING FACE HUB
 # -------------------------------
 model_path = hf_hub_download(
-    repo_id="vsardey/tourism-package-prediction-model",
+    repo_id="viveksardey/tourism-package-prediction-model",
     filename="tourism-package-prediction_model.joblib"
 )
 model = joblib.load(model_path)
