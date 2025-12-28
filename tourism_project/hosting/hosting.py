@@ -20,7 +20,7 @@ space_repo_id = "viveksardey/TourismPackagePredictionFrontend"   # updated repo_
 # UPLOAD STREAMLIT APP FILES
 # -------------------------------
 api.upload_folder(
-    folder_path="/content/tourism_project/deployment",   # local deployment app folder
+    folder_path="tourism_project/deployment",   # local deployment app folder
     repo_id=space_repo_id,
     repo_type="space",
     path_in_repo="",                            # root of space repo
