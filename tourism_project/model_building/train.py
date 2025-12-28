@@ -12,16 +12,21 @@ from huggingface_hub import HfApi, create_repo
 # -------------------------
 # MLflow configuration
 # -------------------------
-#mlflow.set_tracking_uri(public_url)
-#mlflow.set_experiment("Tourism_Package_Prediction_MLOps_Experiment")
+mlflow.set_tracking_uri("https://unsymmetrically-nonvagrant-shaquana.ngrok-free.dev")
+mlflow.set_experiment("Tourism_Package_Prediction_MLOps_Experiment")
 
 # -------------------------
 # LOAD SPLIT FILES FROM HF DATASET
 # -------------------------
-Xtrain = pd.read_csv("Xtrain.csv")
-Xtest = pd.read_csv("Xtest.csv")
-Ytrain = pd.read_csv("Ytrain.csv")
-Ytest = pd.read_csv("Ytest.csv")
+Xtrain_path = "hf://datasets/vsardey/tourism-package-prediction/Xtrain.csv"
+Xtest_path = "hf://datasets/vsardey/tourism-package-prediction/Xtest.csv"
+Ytrain_path = "hf://datasets/vsardey/tourism-package-prediction/Ytrain.csv"
+Ytest_path = "hf://datasets/vsardey/tourism-package-prediction/Ytest.csv"
+
+Xtrain = pd.read_csv(Xtrain_path)
+Xtest = pd.read_csv(Xtest_path)
+Ytrain = pd.read_csv(Ytrain_path)
+Ytest = pd.read_csv(Ytest_path)
 
 # -------------------------
 # FEATURE GROUPS

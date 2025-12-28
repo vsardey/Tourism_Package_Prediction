@@ -17,18 +17,6 @@ api = HfApi(token=HF_TOKEN)
 space_repo_id = "vsardey/Tourism-Package-Prediction-Frontend-Space"   # updated repo_id
 
 # -------------------------------
-# CREATE SPACE IF NOT EXISTS
-# -------------------------------
-create_repo(
-    repo_id=space_repo_id,
-    repo_type="space",
-    space_sdk="streamlit",        # your app uses Streamlit
-    exist_ok=True
-)
-
-print("✅ Hugging Face Space is ready.")
-
-# -------------------------------
 # UPLOAD STREAMLIT APP FILES
 # -------------------------------
 api.upload_folder(
@@ -38,5 +26,5 @@ api.upload_folder(
     path_in_repo="",                            # root of space repo
 )
 
-print("🚀 App successfully deployed to Hugging Face Space.")
-print(f"🌐 Visit: https://huggingface.co/spaces/{space_repo_id}")
+print("App successfully deployed to Hugging Face Space.")
+print(f"Visit: https://huggingface.co/spaces/{space_repo_id}")
