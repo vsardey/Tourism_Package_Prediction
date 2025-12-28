@@ -9,7 +9,7 @@ from huggingface_hub import login
 # -------------------------
 # READ DATA
 # -------------------------
-DATA_PATH = "/content/tourism_project/data/tourism.csv"
+DATA_PATH = "tourism_project/data/tourism.csv"
 df = pd.read_csv(DATA_PATH)
 print("Dataset loaded successfully.")
 
