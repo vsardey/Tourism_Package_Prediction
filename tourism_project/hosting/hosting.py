@@ -1,0 +1,42 @@
+from huggingface_hub import HfApi, create_repo
+import os
+
+# -------------------------------
+# AUTHENTICATION
+# -------------------------------
+HF_TOKEN = os.getenv("TPP_HF_TOKEN")
+
+if HF_TOKEN is None:
+    raise ValueError("Environment variable 'TPP_HF_TOKEN' is not set. Please add your HF token.")
+
+api = HfApi(token=HF_TOKEN)
+
+# -------------------------------
+# HUGGING FACE SPACE DETAILS
+# -------------------------------
+space_repo_id = "vsardey/Tourism-Package-Prediction-Frontend-Space"   # updated repo_id
+
+# -------------------------------
+# CREATE SPACE IF NOT EXISTS
+# -------------------------------
+create_repo(
+    repo_id=space_repo_id,
+    repo_type="space",
+    space_sdk="streamlit",        # your app uses Streamlit
+    exist_ok=True
+)
+
+print("✅ Hugging Face Space is ready.")
+
+# -------------------------------
+# UPLOAD STREAMLIT APP FILES
+# -------------------------------
+api.upload_folder(
+    folder_path="/content/tourism_project/deployment",   # local deployment app folder
+    repo_id=space_repo_id,
+    repo_type="space",
+    path_in_repo="",                            # root of space repo
+)
+
+print("🚀 App successfully deployed to Hugging Face Space.")
+print(f"🌐 Visit: https://huggingface.co/spaces/{space_repo_id}")
