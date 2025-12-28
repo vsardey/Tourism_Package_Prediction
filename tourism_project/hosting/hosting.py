@@ -4,11 +4,6 @@ import os
 # -------------------------------
 # AUTHENTICATION
 # -------------------------------
-#HF_TOKEN = os.getenv("TPP_HF_TOKEN")
-
-#if HF_TOKEN is None:
-#    raise ValueError("Environment variable 'TPP_HF_TOKEN' is not set. Please add your HF token.")
-
 api = HfApi(token=os.getenv("TPP_HF_TOKEN"))
 
 # -------------------------------
